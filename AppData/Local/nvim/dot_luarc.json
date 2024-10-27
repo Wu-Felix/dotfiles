@@ -1,0 +1,13 @@
+{
+    "diagnostics.globals": [
+        "lfs",
+        "mdk",
+        "print",
+        "cmp",
+        "local",
+        "if"
+    ],
+    "diagnostics.disable": [
+        "missing-fields"
+    ]
+}
