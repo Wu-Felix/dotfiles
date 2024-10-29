@@ -14,6 +14,14 @@ function install($command)
     Write-Host "$command 软件安装完成"
   }
 }
+function catppuccin()
+{ 
+  Import-Module Catppuccin
+  if (!$?)
+  {
+    git clone https://github.com/catppuccin/powershell.git $env:scoop//modules//catppuccin
+  } 
+}
 install( "7zip" )
 install( "aria2" )
 install( "bat" )
@@ -55,4 +63,6 @@ install( "vscode" )
 install( "wezterm" )
 install( "yazi" )
 install( "zoxide" )
+install("psreadline")
+catppuccin
 Write-Host "安装完成"
