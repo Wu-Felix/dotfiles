@@ -48,4 +48,37 @@ return {
       },
     },
   },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      if vim.g.neovide then
+      else
+        require("tokyonight").setup({
+          transparent = true,
+          terminal_colors = true,
+          styles = {
+            comments = { italic = true },
+            keywords = { bold = true, italic = true },
+            sidebars = "transparent",
+            floats = "transparent",
+          },
+          plugins = {
+            all = true,
+          },
+          on_colors = function(colors) end,
+          on_highlights = function(highlights, colors)
+            highlights.LspInlayHint = {
+              bg = colors.none,
+              fg = colors.dark3,
+            }
+            highlights.Statement = { fg = colors.magenta, italic = true, bold = true }
+            highlights.Type = { fg = colors.blue1, bold = true }
+            highlights["@lsp.type.rust"] = { italic = true, fg = colors.red1 }
+          end,
+        })
+      end
+    end,
+  },
 }
