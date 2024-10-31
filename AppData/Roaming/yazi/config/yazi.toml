@@ -26,7 +26,7 @@ ueberzug_offset = [0, 0, 0, 0]
 [opener]
 edit = [
   { run = '$EDITOR "$@"', block = true, for = "unix" },
-  { run = 'neovide "%*"', block = true, for = "windows" },
+  { run = 'nvim "%*"', block = true, for = "windows" },
 ]
 open = [
   { run = 'xdg-open "$@"', desc = "Open", for = "linux" },
@@ -138,9 +138,6 @@ suppress_preload = false
 
 [plugin]
 
-prepend_previewers = [
-  { name = "*.md", run = "glow" },
-]
 append_previewers = [
   { name = "*", run = "hexyl" }
 ]

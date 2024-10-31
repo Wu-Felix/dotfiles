@@ -245,7 +245,7 @@ Set-PSReadlineKeyHandler -Chord "Ctrl+f" -ScriptBlock {
 }
 Set-PSReadlineKeyHandler -Chord "Ctrl+e" -ScriptBlock {
   [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
-  [Microsoft.PowerShell.PSConsoleReadLine]::Insert('Get-ChildItem . -Recurse -Attributes !Directory | Invoke-Fzf | % { neovide $_ }')
+  [Microsoft.PowerShell.PSConsoleReadLine]::Insert('nvim $(fzf)')
   [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
 
