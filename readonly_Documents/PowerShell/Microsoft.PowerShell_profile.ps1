@@ -224,24 +224,18 @@ $Env:FZF_DEFAULT_OPTS = '--height 90%
 --highlight-line 
 --info=inline-right 
 --ansi 
---color=bg+:#2d3f76 
---color=bg:#1e2030 
---color=border:#589ed7 
---color=fg:#c8d3f5 
---color=gutter:#1e2030 
---color=header:#ff966c 
---color=hl+:#65bcff 
---color=hl:#65bcff 
---color=info:#545c7e 
---color=marker:#ff007c 
---color=pointer:#ff007c 
---color=prompt:#65bcff 
---color=query:#c8d3f5:regular 
---color=scrollbar:#589ed7 
---color=separator:#ff966c 
---color=spinner:#ff007c 
+--color=bg+:#3c3836
+--color=spinner:#fb4934
+--color=hl:#928374
+--color=fg:#ebdbb2
+--color=header:#928374
+--color=info:#8ec07c
+--color=pointer:#fb4934
+--color=marker:#fb4934
+--color=fg+:#ebdbb2
+--color=prompt:#fb4934
+--color=hl+:#fb4934
 '
-$Env:CMAKE_GENERATOR='MinGW Makefiles'
 $Env:RUNEWIDTH_EASTASIAN=0
 
 Set-PSReadlineKeyHandler -Chord "Ctrl+f" -ScriptBlock {
