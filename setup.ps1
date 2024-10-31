@@ -22,6 +22,56 @@ function catppuccin()
     git clone https://github.com/catppuccin/powershell.git $env:scoop//modules//catppuccin
   } 
 }
+function pip_install($command)
+{
+  if ( !(Get-Command -Name $command -ErrorAction SilentlyContinue) )
+  {
+    do
+    { 
+      Write-Host $command
+      Write-Host "$command 软件不存在,开始下载$command"
+      pip install $command 
+    }while(!$?)
+  } else
+  {
+    Write-Host "$command 软件安装完成"
+  }
+}
+function npm_install($command)
+{
+  if ( !(Get-Command -Name $command -ErrorAction SilentlyContinue) )
+  {
+    do
+    { 
+      Write-Host $command
+      Write-Host "$command 软件不存在,开始下载$command"
+      npm install $command 
+    }while(!$?)
+  } else
+  {
+    Write-Host "$command 软件安装完成"
+  }
+}
+function import_module($command)
+{
+  $module = Get-Module -Name $command -ListAvailable
+  if (!$module)
+  {
+    Install-Module $command -Scope CurrentUser
+  } 
+}
+function PSCompletions_config
+{
+  $module = Get-Module -Name  PSCompletions -ListAvailable
+  if ($module)
+  {
+    PSCompletions add npm
+    PSCompletions add pip
+    PSCompletions add cargo
+    PSCompletions add scoop
+    PSCompletions add git
+  }
+}
 install( "7zip" )
 install( "aria2" )
 install( "bat" )
@@ -65,4 +115,8 @@ install( "yazi" )
 install( "zoxide" )
 install("psreadline")
 catppuccin
+pip_install("compiledb")
+npm_install("fanyi")
+import_module("PSCompletions")
+PSCompletions_config
 Write-Host "安装完成"
