@@ -13,9 +13,3 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.api.nvim_set_hl(0, "Visual", { reverse = true })
   end,
 })
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "markdown" },
-  callback = function()
-    vim.opt_local.spell = false
-  end,
-})

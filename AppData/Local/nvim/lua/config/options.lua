@@ -7,6 +7,7 @@ opt.timeoutlen = 1000
 opt.cursorline = false
 opt.list = false
 opt.termguicolors = true
+opt.spell = false
 vim.g.lazygit_config = false
 local powershell_options = {
   shell = vim.fn.executable("pwsh") == 1 and "pwsh" or "powershell",
