@@ -219,15 +219,28 @@ $Env:FZF_DEFAULT_COMMAND = 'fd'
 $Env:FZF_DEFAULT_OPTS = '--height 90% 
 --layout=reverse 
 --bind=alt-j:down,alt-k:up,alt-i:toggle+down 
---border 
 --preview "bat --color=always --style=numbers --line-range=:500 {}" 
 --highlight-line 
 --info=inline-right 
 --ansi 
---color=bg+:#313244,spinner:#f5e0dc,hl:#f38ba8
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
---color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8
---color=selected-bg:#45475a
+--layout=reverse 
+--border=none
+--color=bg+:#2d3f76
+--color=bg:#1e2030
+--color=border:#589ed7
+--color=fg:#c8d3f5
+--color=gutter:#1e2030
+--color=header:#ff966c
+--color=hl+:#65bcff
+--color=hl:#65bcff
+--color=info:#545c7e
+--color=marker:#ff007c
+--color=pointer:#ff007c
+--color=prompt:#65bcff
+--color=query:#c8d3f5:regular
+--color=scrollbar:#589ed7
+--color=separator:#ff966c
+--color=spinner:#ff007c
 --multi
 '
 $Env:RUNEWIDTH_EASTASIAN=0

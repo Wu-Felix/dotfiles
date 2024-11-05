@@ -53,7 +53,7 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      if vim.g.neovide then
+      if true then
       else
         require("tokyonight").setup({
           transparent = true,
@@ -80,11 +80,5 @@ return {
         })
       end
     end,
-  },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "catppuccin-frappe",
-    },
   },
 }
