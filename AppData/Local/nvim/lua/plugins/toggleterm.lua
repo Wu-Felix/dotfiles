@@ -4,16 +4,33 @@ return {
     {
       "akinsho/toggleterm.nvim",
       version = "*",
+      keys = {
+        { "<leader>th", "<cmd>ToggleTerm size=15 direction=horizontal<cr>", { desc = "ToggleTerm horizontal split" } },
+        { "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", { desc = "ToggleTerm float" } },
+        { "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>", { desc = "ToggleTerm vertical split" } },
+      },
+      opts = {
+        highlights = {
+          Normal = { link = "Normal" },
+          NormalNC = { link = "NormalNC" },
+          NormalFloat = { link = "NormalFloat" },
+          FloatBorder = { link = "FloatBorder" },
+          StatusLine = { link = "StatusLine" },
+          StatusLineNC = { link = "StatusLineNC" },
+          WinBar = { link = "WinBar" },
+          WinBarNC = { link = "WinBarNC" },
+        },
+        size = 10,
+        on_create = function()
+          vim.opt.foldcolumn = "0"
+          vim.opt.signcolumn = "no"
+        end,
+        shading_factor = 2,
+        direction = "float",
+        float_opts = { border = "rounded" },
+      },
       config = function()
-        require("toggleterm").setup({
-          open_mapping = [[<c-\>]],
-          -- 打开新终端后自动进入插入模式
-          start_in_insert = true,
-          -- 在当前buffer的下方打开新终端
-          direction = "float",
-          shade_filetypes = { "none", "fzf" },
-        })
-
+        require("toggleterm").setup()
         local Terminal = require("toggleterm.terminal").Terminal
         local btm = Terminal:new({
           cmd = "btm",
