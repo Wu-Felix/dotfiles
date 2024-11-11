@@ -8,7 +8,7 @@ opt.cursorline = false
 opt.list = false
 opt.termguicolors = true
 opt.spell = false
-vim.g.lazygit_config = false
+-- vim.g.lazygit_config = false
 local powershell_options = {
   shell = vim.fn.executable("pwsh") == 1 and "pwsh" or "powershell",
   shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
@@ -29,11 +29,10 @@ if vim.g.neovide then
   vim.g.neovide_cursor_vfx_mode = "ripple"
   -- vim.g.neovide_transparency = 0.5
   -- vim.cmd([[colorscheme onedark]])
-  vim.g.neovide_fullscreen = true
+  -- vim.g.neovide_fullscreen = true
   vim.g.neovide_cursor_animate_command_line = true
   vim.g.neovide_cursor_antialiasing = false
   vim.g.neovide_hide_mouse_when_typing = true
   vim.g.neovide_cursor_animate_in_insert_mode = true
   vim.g.neovide_cursor_vfx_mode = "10"
 end
-
