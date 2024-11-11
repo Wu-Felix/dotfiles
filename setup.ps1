@@ -114,6 +114,8 @@ install( "wezterm" )
 install( "yazi" )
 install( "zoxide" )
 install("psreadline")
+install("windows-terminal")
+install("flow-launcher")
 catppuccin
 pip_install("compiledb")
 npm_install("fanyi")
