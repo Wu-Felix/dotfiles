@@ -7,8 +7,7 @@ opt.timeoutlen = 1000
 opt.cursorline = false
 opt.list = false
 opt.termguicolors = true
-opt.spell = false
-vim.g.lazygit_config = false
+vim.g.lazygit_config = true
 local powershell_options = {
   shell = vim.fn.executable("pwsh") == 1 and "pwsh" or "powershell",
   shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",

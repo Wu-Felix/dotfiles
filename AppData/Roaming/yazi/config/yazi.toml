@@ -189,6 +189,10 @@ id   = "git"
 name = "*/"
 run  = "git"
 
+prepend_previewers = [
+{ name = "*.md", run = "glow" },
+]
+
 [input]
 # cd
 cd_title = "Change directory:"
