@@ -2,7 +2,6 @@
 return {
   "debugloop/telescope-undo.nvim",
   lazy = true,
-  keys = { "<space>u" },
   dependencies = { -- note how they're inverted to above example
     {
       "nvim-telescope/telescope.nvim",
@@ -20,6 +19,7 @@ return {
     -- don't use `defaults = { }` here, do this in the main telescope spec
     extensions = {
       undo = {
+        use_delta = true,
         -- telescope-undo.nvim config, see below
       },
       -- no other extensions here, they can have their own spec too
@@ -31,6 +31,5 @@ return {
     -- defaults, as well as each extension).
     require("telescope").setup(opts)
     require("telescope").load_extension("undo")
-    vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
   end,
 }
