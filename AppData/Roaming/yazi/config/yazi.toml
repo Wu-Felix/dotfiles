@@ -138,9 +138,6 @@ suppress_preload = false
 
 [plugin]
 
-append_previewers = [
-  { name = "*", run = "hexyl" }
-]
 preloaders = [
   # Image
   { mime = "image/vnd.djvu", run = "noop" },
@@ -179,6 +176,9 @@ previewers = [
   { name = "*", run = "file" },
 ]
 
+prepend_previewers = [
+{ name = "*.md", run = "glow" },
+]
 [[plugin.prepend_fetchers]]
 id   = "git"
 name = "*"
@@ -189,9 +189,6 @@ id   = "git"
 name = "*/"
 run  = "git"
 
-prepend_previewers = [
-{ name = "*.md", run = "glow" },
-]
 
 [input]
 # cd

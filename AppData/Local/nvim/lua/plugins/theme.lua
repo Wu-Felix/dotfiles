@@ -50,8 +50,7 @@ return {
   },
   {
     "folke/tokyonight.nvim",
-    lazy = false,
-    -- priority = 1000,
+    priority = 1000,
     config = function()
       if true then
       else
@@ -76,6 +75,8 @@ return {
             highlights.Statement = { fg = colors.magenta, italic = true, bold = true }
             highlights.Type = { fg = colors.blue1, bold = true }
             highlights["@lsp.type.rust"] = { italic = true, fg = colors.red1 }
+            highlights.Visual = { reverse = true, bg = "#2d3f76" }
+            highlights.treesitterContext = { bg = none }
           end,
         })
       end
