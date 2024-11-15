@@ -1,1 +1,1 @@
-vim.api.nvim_set_hl(0, "Visual", { reverse = true })
+vim.cmd("hi Visual gui=reverse")
