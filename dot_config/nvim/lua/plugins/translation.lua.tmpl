@@ -72,7 +72,11 @@ return {
     },
     dependencies = { "kkharji/sqlite.lua" },
     opts = {
-      dir = {{.trans_dict}} .. "/dict",
+    {{ if eq .chezmoi.os "windows" }}
+      dir = "~/OneDrive/.config" .. "/dict",
+    {{else}}
+      dir = "~/my_config" .. "/dict",
+    {{end}}
       -- your configuration there
     },
   },
