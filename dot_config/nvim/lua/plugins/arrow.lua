@@ -6,6 +6,7 @@ return {
     },
     keys = {
       ";",
+      "m",
     },
     opts = {
       show_icons = true,
