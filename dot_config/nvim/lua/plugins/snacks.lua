@@ -67,5 +67,12 @@ return {
       end,
       desc = "zoxide",
     },
+    {
+      "<leader>cb",
+      function()
+        Snacks.picker.git_branches()
+      end,
+      desc = "zoxide",
+    },
   },
 }
