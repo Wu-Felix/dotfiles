@@ -13,8 +13,14 @@ return {
         position = "inline",
       },
       checkbox = {
+        enabled = true,
+        right_pad = 0,
         custom = {
-          important = { raw = "[>]", rendered = "", highlight = "DiagnosticWarn" },
+          question = { raw = "[?]", rendered = "", highlight = "RenderMarkdownError" },
+          ongoing = { raw = "[>]", rendered = "", highlight = "RenderMarkdownSuccess" },
+          canceled = { raw = "[~]", rendered = "󰗨", highlight = "ObsidianTilde" },
+          important = { raw = "[!]", rendered = "", highlight = "RenderMarkdownWarn" },
+          favorite = { raw = "[^]", rendered = "", highlight = "RenderMarkdownMath" },
         },
       },
     },
