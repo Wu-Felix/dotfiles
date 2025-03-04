@@ -12,9 +12,6 @@ return {
         icons = { "󰎥  ", "󰎨  ", "󰎫  ", "󰎲  ", "󰎯  ", "󰎴  " },
         position = "inline",
       },
-      bullet = {
-        right_pad = 1,
-      },
       checkbox = {
         enabled = true,
         right_pad = 0,
