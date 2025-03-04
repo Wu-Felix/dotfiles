@@ -7,17 +7,11 @@
 -- blink.add_provider("obsidian_tags", { name = "obsidian_tags", module = "blink.compat.source" })
 return {
   {
-    "epwalsh/obsidian.nvim",
+    "obsidian-nvim/obsidian.nvim",
     version = "*", -- Use the latest release instead of the latest commit (recommended)
     ft = "markdown",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      {
-        "ibhagwan/fzf-lua",
-        config = function()
-          require("render-markdown.core.ui")
-        end,
-      },
     },
     cmd = {
       "ObsidianBacklinks",
@@ -110,6 +104,7 @@ return {
       -- Completion settings
       completion = {
         nvim_cmp = false, -- Disable completion using nvim-cmp
+        blink = true,
       },
       notes_subdir = "limbo", -- Subdirectory for notes
       new_notes_location = "limbo", -- Location for new notes
@@ -118,11 +113,6 @@ return {
         img_folder = "files", -- Folder for image attachments
       },
       -- Settings for daily notes
-      templates = {
-        folder = "templates",
-        date_format = "%Y-%m-%d-%a",
-        time_format = "%H:%M",
-      },
       daily_notes = {
         -- Optional, if you keep daily notes in a separate directory.
         folder = "notes/dailies",
@@ -140,7 +130,10 @@ return {
       },
       picker = {
         -- Set your preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', or 'mini.pick'.
-        name = "fzf-lua",
+        name = "snacks.pick",
+      },
+      templates = {
+        folder = "templates/note",
       },
       -- Function to generate frontmatter for notes
       note_frontmatter_func = function(note)
