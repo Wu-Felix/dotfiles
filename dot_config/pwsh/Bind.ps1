@@ -2,16 +2,16 @@ function EP
 {
   explorer.exe . 
 }
-function fzf_edite
+function tv_edite
 {
-  nvim $(fzf)
+  nvim $(tv)
 }
 
 Set-alias ex EP 
 Set-alias lg lazygit
 Set-alias 'sudo' 'gsudo'
 Set-alias 'Ctrl+f' 'cd "$(fzf)\.."'
-Set-alias fe fzf_edite
+Set-alias fe tv_edite
 # yzai
 function y
 {
