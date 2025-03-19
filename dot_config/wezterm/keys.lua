@@ -38,13 +38,14 @@ function M.setup(config)
 		{ mods = M.mod, key = "h", action = act({ ActivateTabRelative = -1 }) },
 		{ mods = M.mod, key = "R", action = wezterm.action.RotatePanes("Clockwise") },
 		-- show the pane selection mode, but have it swap the active and selected panes
-		{ mods = M.mod, key = "S", action = wezterm.action.PaneSelect({}) },
+		{ mods = M.mod, key = "i", action = wezterm.action.PaneSelect({}) },
 		-- Clipboard
 		{ mods = M.mod, key = "c", action = act.CopyTo("Clipboard") },
 		{ mods = M.mod, key = "Space", action = act.QuickSelect },
 		{ mods = M.mod, key = "X", action = act.ActivateCopyMode },
 		{ mods = M.mod, key = "f", action = act.Search("CurrentSelectionOrEmptyString") },
-		{ mods = M.mod, key = "v", action = act.PasteFrom("Clipboard") },
+		{ mods = "ALT", key = "c", action = act.CopyTo("Clipboard") },
+		{ mods = "ALT", key = "v", action = act.PasteFrom("Clipboard") },
 		{
 			key = "u",
 			mods = M.mod,
@@ -68,10 +69,6 @@ function M.setup(config)
 		M.split_nav("resize", "CTRL", "RightArrow", "Left"),
 		M.split_nav("resize", "CTRL", "UpArrow", "Up"),
 		M.split_nav("resize", "CTRL", "DownArrow", "Down"),
-		M.split_nav("move", "CTRL", "h", "Left"),
-		M.split_nav("move", "CTRL", "j", "Down"),
-		M.split_nav("move", "CTRL", "k", "Up"),
-		M.split_nav("move", "CTRL", "l", "Right"),
 	}
 end
 
