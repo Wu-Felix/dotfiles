@@ -10,7 +10,7 @@ palette = "catppuccin_macchiato"
 # Note the use of Catppuccin color 'peach'
 success_symbol = "[[󰊠](green) ❯](peach)"
 error_symbol = "[[󰧵](red) ❯](peach)"
-vimcmd_symbol = "[󰄛 ❮](subtext1)" # For use with zsh-vi-mode
+vimcmd_symbol = "[[](cyan) ❯](peach)" # For use with zsh-vi-mode
 
 [git_status]
 untracked = '[ $count](bold yellow) '
