@@ -2,6 +2,7 @@ return {
   {
     "MeanderingProgrammer/render-markdown.nvim",
     opts = {
+      render_modes = true,
       code = {
         sign = true,
         width = "block",
