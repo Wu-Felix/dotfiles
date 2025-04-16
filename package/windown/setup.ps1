@@ -166,7 +166,8 @@ $packages=@(
   "gpg",
   "aichat",
   "zebar",
-  "glazewm"
+  "glazewm",
+  "yt-dlp"
 )
 install_scoop_packages $packages
 catppuccin
