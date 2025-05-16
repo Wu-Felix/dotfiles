@@ -1,6 +1,15 @@
 gui:
   showFileIcons: true
   nerdFontsVersion: "3"
+  language: en
+  branchColorPatterns:
+    "^feature/": "#4fd6be"
+    "^hotfix/": "#c53b53"
+    "develop": "#fca7ea"
+    "^(master|main)$": "#ffc777"
+  authorColors:
+    "felix": "#4fd6be" # use red for John Smith
+    "*": "#c8d3f5" # use green for Alan Smithee
   theme:
     activeBorderColor:
       - "#ff966c"
@@ -28,7 +37,78 @@ gui:
       - "#c8d3f5"
 os:
   edit: "nvim {{filename}}"
+disableStartupPopups: false
+services: {}
+notARepository: skip
+promptToReturnFromSubprocess: true
 git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never
+  merging:
+    args: "--no-ff"
+customCommands:
+  # retrieved from: https://github.com/jesseduffield/lazygit/wiki/Custom-Commands-Compendium#conventional-commit
+  - key: "b"
+    command: "gh browse"
+    context: "files"
+  - key: "b"
+    command: 'gh browse "{{.SelectedLocalCommit.Sha}}"'
+    context: "commits"
+  - key: "<c-v>"
+    context: "global"
+    description: "Create new conventional commit"
+    prompts:
+      - type: "menu"
+        key: "Type"
+        title: "Type of change"
+        options:
+          - name: "build"
+            description: "Add or update compiled files or packages"
+            value: "📦 build"
+          - name: "feat"
+            description: "Introduce new features"
+            value: "✨ feat"
+          - name: "fix"
+            description: "Fix a bug"
+            value: "🐛 fix"
+          - name: "hotfix"
+            description: "Critical hotfix"
+            value: "🚑️ hotfix"
+          - name: "chore"
+            description: "Other changes that don't modify src or test files"
+            value: "🔧 chore"
+          - name: "ci"
+            description: "Fix CI Build"
+            value: "💚 ci"
+          - name: "docs"
+            description: "Add or update documentation"
+            value: "📝 docs"
+          - name: "perf"
+            description: "Improve performance"
+            value: "⚡️ perf"
+          - name: "refactor"
+            description: "Refactor code"
+            value: "♻️  refactor"
+          - name: "revert"
+            description: "Reverts a previous commit"
+            value: "⏪️ revert"
+          - name: "style"
+            description: "Changes that do not affect the meaning of the code"
+            value: "🎨 style"
+          - name: "test"
+            description: "Add, update, or pass tests"
+            value: "✅ test"
+          - name: "release"
+            description: "release / version tags."
+            value: "🔖 release"
+      - type: "input"
+        title: "Scope"
+        key: "Scope"
+        initialValue: ""
+      - type: "input"
+        title: "message"
+        key: "Message"
+        initialValue: ""
+    command: "git commit --message '{{.Form.Type}}{{ if .Form.Scope }}({{ .Form.Scope }}){{ end }}: {{.Form.Message}}'"
+    loadingText: "Creating conventional commit..."
