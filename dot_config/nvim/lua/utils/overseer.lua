@@ -15,3 +15,4 @@ if vim.fn.has("win32") == 1 then
     end
   end
 end
+require("overseer").register_template(require("overseer.template.music"))
