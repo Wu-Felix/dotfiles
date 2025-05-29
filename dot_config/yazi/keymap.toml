@@ -51,15 +51,6 @@ run  = "plugin smart-enter"
 desc = "Enter the child directory, or open the file"
 
 [[manager.prepend_keymap]]
-on = [ "<C-g>" ]
-run = "shell --block --confirm 'run lazygit '"
-desc = "run lazygit"
-[[manager.prepend_keymap]]
-on = [ "<C-o>" ]
-run = "shell --block --confirm 'explorer .'"
-desc = "run explorer"
-
-[[manager.prepend_keymap]]
 on   = [ "c", "a" ]
 run  = "plugin compress"
 desc = "Archive selected files"
@@ -110,16 +101,6 @@ run  = "plugin vcs-files"
 desc = "Show Git file changes"
 
 [[manager.prepend_keymap]]
-on   = "o"
-run  = "plugin open-with-cmd --args=block"
-desc = "Open with command in the terminal"
-
-[[manager.prepend_keymap]]
-on   = "O"
-run  = "plugin open-with-cmd"
-desc = "Open with command"
-
-[[manager.prepend_keymap]]
 on = "<A-y>"
 run = ["plugin copy-file-contents"]
 desc = "Copy contents of file"
@@ -148,16 +129,6 @@ desc = "open PersonalSpace"
 on   = [ "g", "i" ]
 run  = "plugin lazygit"
 desc = "run lazygit"
-
-[[manager.prepend_keymap]]
-on = [  ";" ]
-run = 'plugin custom-shell -- auto --interactive'
-desc = "custom-shell as default, interactive"
-
-[[manager.prepend_keymap]]
-on = [  ":" ]
-run = 'plugin custom-shell -- auto --interactive --block'
-desc = "custom-shell as default, interactive, block"
 
 [[manager.prepend_keymap]]
 on = ["C"]
